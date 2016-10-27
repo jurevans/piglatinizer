@@ -1,6 +1,6 @@
 module.exports = ( () => {
-        var get = function() {
-            var ascii_kitteh =  `
+        const get = function() {
+            const ascii_kitteh =  `
                       ,.                 .,
                      ,: ':.    .,.    .:' :,
                      ,',   '.:'   ':.'   ,',
