@@ -21,8 +21,6 @@ module.exports = () => {
             result: PigLatin.pigLatinizer(req.body.string)
         };
 
-        console.log(req.body);
-        
         res.setHeader('Content-Type', 'application/json');
         res.send( JSON.stringify( data ) );
     });
