@@ -1,10 +1,10 @@
-module.exports = (function() {
+module.exports = (() => {
 
-    _getVowels = function () {
+    var _getVowels = () => {
         return ['a', 'e', 'i', 'o', 'u', 'y'];
     };
 
-    this.pigLatinizer = function (sentence) {
+    var pigLatinizer = (sentence) => {
         return sentence.toLowerCase().split(' ').map( w => {
                 return (_getVowels().indexOf( w.split('')[0] ) > -1
                         || _getVowels().indexOf( w.split('')[1] ) > -1
@@ -15,6 +15,8 @@ module.exports = (function() {
         ).join(' ');
     };
 
-    return this;
+    return {
+        pigLatinizer : pigLatinizer
+    };
 
 })();

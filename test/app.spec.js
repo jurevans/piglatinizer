@@ -1,5 +1,4 @@
 import 'babel-polyfill';
-
 let assert = require('chai').assert;
 
 describe('Array', () => {
