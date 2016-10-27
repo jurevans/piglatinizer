@@ -4,7 +4,7 @@ module.exports = (() => {
         return ['a', 'e', 'i', 'o', 'u', 'y'];
     };
 
-    var pigLatinizer = (sentence) => {
+    var pigLatinizer = (sentence='') => {
         return sentence.toLowerCase().split(' ').map( w => {
                 return (_getVowels().indexOf( w.split('')[0] ) > -1
                         || _getVowels().indexOf( w.split('')[1] ) > -1

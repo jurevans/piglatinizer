@@ -1,7 +1,9 @@
 import 'babel-polyfill';
+
 let assert = require('chai').assert;
 let PigLatin = require('../src/piglatin');
 
+/* Test the PigLatin.pigLatinizer() method */
 describe('PigLatin', () => {
     describe('#pigLatinizer', () => {
         it('should return a string',  () => {

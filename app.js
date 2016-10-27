@@ -15,6 +15,18 @@ module.exports = () => {
         res.send( JSON.stringify( req.query ) );
 	});
 
+    app.post('/api', (req, res) => {
+        let data = {
+            request: req.body.string,
+            result: PigLatin.pigLatinizer(req.body.string)
+        };
+
+        console.log(req.body);
+        
+        res.setHeader('Content-Type', 'application/json');
+        res.send( JSON.stringify( data ) );
+    });
+
     app.get('/api/:string', (req, res) => {
         let data = {
             request: req.params.word,

@@ -1,4 +1,5 @@
 import 'babel-polyfill';
+
 let chai = require('chai');
 let should = chai.should();
 let http = require('chai-http');
@@ -7,7 +8,7 @@ let PigLatin = require('../src/piglatin.js');
 
 chai.use(http);
 
-/* Test the testing framework */
+/* Test the API */
 describe('PigLatin', () => {
     describe('API', () => {
         it('Return empty object on /api GET', (done) => {
@@ -31,8 +32,6 @@ describe('PigLatin', () => {
                 });
             done();
         });
-
-
 
     });
 });
