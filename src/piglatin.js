@@ -5,7 +5,7 @@ module.exports = (() => {
     };
 
     let pigLatinizer = (sentence='') => {
-        return sentence.toLowerCase().split(' ').map( w => {
+        return sentence.toLowerCase().split(/\s+/).map( w => {
                 return (_getVowels().indexOf( w.split('')[0] ) > -1
                         || _getVowels().indexOf( w.split('')[1] ) > -1
                     ? w.slice(1) + w.slice(0, 1)
