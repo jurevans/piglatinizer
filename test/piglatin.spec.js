@@ -1,14 +1,11 @@
 import 'babel-polyfill';
 let assert = require('chai').assert;
-
 let PigLatin = require('../src/piglatin');
 
 describe('PigLatin', () => {
     describe('#pigLatinizer', () => {
         it('should return a string',  () => {
-            let result = PigLatin.pigLatinizer('Test');
-
-            assert.equal(typeof result, 'string');
+            assert.equal(typeof PigLatin.pigLatinizer('Test'), 'string');
         });
     });
 

@@ -1,11 +1,38 @@
 import 'babel-polyfill';
-let assert = require('chai').assert;
+let chai = require('chai');
+let should = chai.should();
+let http = require('chai-http');
+let server = require('../app');
+let PigLatin = require('../src/piglatin.js');
+
+chai.use(http);
 
 /* Test the testing framework */
-describe('Array', () => {
-    describe('#indexOf()', () => {
-        it('should return -1 when the value is not present',  () => {
-            assert.equal(-1, [1,2,3].indexOf(4));
+describe('PigLatin', () => {
+    describe('API', () => {
+        it('Return empty object on /api GET', (done) => {
+            chai.request(server)
+                .get('/api')
+                .end( (err, res) => {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('Object');
+                });
+            done();
         });
+
+        it('Return object on /api/<word> GET', (done) => {
+            chai.request(server)
+                .get('/api/test')
+                .end( (err, res) => {
+                    res.should.have.status(200);
+                    res.should.be.json;
+                    res.body.should.be.a('Object');
+                });
+            done();
+        });
+
+
+
     });
 });
