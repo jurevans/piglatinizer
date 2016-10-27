@@ -11,7 +11,10 @@ module.exports = () => {
     app.use( express.static(__dirname + '/dist') );
 
     app.get('/api', (req, res) => {
-        let data = {};
+        let data = {
+            request : '',
+            result : ''
+        };
 
         res.setHeader('Content-Type', 'application/json');
         res.send( JSON.stringify( data ) );
