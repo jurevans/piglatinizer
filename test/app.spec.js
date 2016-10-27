@@ -1,6 +1,7 @@
 import 'babel-polyfill';
 let assert = require('chai').assert;
 
+/* Test the testing framework */
 describe('Array', () => {
     describe('#indexOf()', () => {
         it('should return -1 when the value is not present',  () => {

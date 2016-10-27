@@ -11,19 +11,14 @@ module.exports = () => {
     app.use( express.static(__dirname + '/dist') );
 
     app.get('/api', (req, res) => {
-        let data = {
-            request : '',
-            result : ''
-        };
-
         res.setHeader('Content-Type', 'application/json');
-        res.send( JSON.stringify( data ) );
+        res.send( JSON.stringify( req.query ) );
 	});
 
-    app.get('/api/:word', (req, res) => {
+    app.get('/api/:string', (req, res) => {
         let data = {
             request: req.params.word,
-            result: PigLatin.pigLatinizer(req.params.word)
+            result: PigLatin.pigLatinizer(req.params.string)
         };
 
         res.setHeader('Content-Type', 'application/json');

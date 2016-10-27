@@ -12,11 +12,21 @@ describe('PigLatin', () => {
         });
     });
 
-    describe('#pigLatinizer', () => {
-        it('should return "estay" if provided "test"',  () => {
-            let result = PigLatin.pigLatinizer('Test');
+    describe('#pigLatinizer("test")', () => {
+        it('should return "estay"',  () => {
+            assert.equal(PigLatin.pigLatinizer('Test'), 'esttay');
+        });
+    });
 
-            assert.equal(result, 'esttay');
+    describe('#pigLatinizer("Justin")', () => {
+        it('should return "ustinjay" - first consonant is added before "ay"',  () => {
+            assert.equal(PigLatin.pigLatinizer('Justin'), 'ustinjay');
+        });
+    });
+
+    describe('#pigLatinizer("Jrustin")', () => {
+        it('should return "ustinjray" - first two consonants added before "ay"',  () => {
+            assert.equal(PigLatin.pigLatinizer('Jrustin'), 'ustinjray');
         });
     });
 });
