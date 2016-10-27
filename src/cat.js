@@ -1,6 +1,6 @@
 module.exports = ( () => {
         var get = function() {
-            var kitty=  `
+            var ascii_kitteh =  `
                       ,.                 .,
                      ,: ':.    .,.    .:' :,
                      ,',   '.:'   ':.'   ,',
@@ -40,7 +40,7 @@ module.exports = ( () => {
 
             `;
 
-            return kitty;
+            return ascii_kitteh;
         }
 
         return {
